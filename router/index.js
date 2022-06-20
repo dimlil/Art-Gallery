@@ -6,5 +6,10 @@ router.get('/', (req, res) => {
         style: 'home.css'
     })
 });
+router.get('/gallary', (req, res) => {
+    res.render('gallery',{
+        style: 'gallery.css'
+    })
+});
 
 export { router }
