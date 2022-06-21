@@ -16,5 +16,10 @@ router.get('/register', (req, res) => {
         style: 'register.css'
     })
 });
+router.get('/login', (req, res) => {
+    res.render('login',{
+        style: 'login.css'
+    })
+});
 
 export { router }
