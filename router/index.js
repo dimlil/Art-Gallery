@@ -16,6 +16,11 @@ router.get('/create', (req, res) => {
         style: 'create.css'
     })
 });
+router.get('/profile', (req, res) => {
+    res.render('profile',{
+        style: 'profile.css'
+    })
+});
 router.get('/register', (req, res) => {
     res.render('register',{
         style: 'register.css'
