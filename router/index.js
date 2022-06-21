@@ -11,5 +11,10 @@ router.get('/gallary', (req, res) => {
         style: 'gallery.css'
     })
 });
+router.get('/register', (req, res) => {
+    res.render('register',{
+        style: 'register.css'
+    })
+});
 
 export { router }
