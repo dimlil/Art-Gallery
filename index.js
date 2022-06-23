@@ -1,5 +1,6 @@
 import Express from "express";
 import { router } from "./router/index.js";
+import { router as authRouter } from "./router/auth.js";
 import handlebars from 'express-handlebars'
 import dotenv from 'dotenv'
 import { conectToDB } from "./connectToDB.js";
@@ -17,6 +18,7 @@ app.set('views', './views');
 app.use(Express.static('static'));
 
 app.use(router);
+app.use(authRouter);
 
 app.get('*', (req, res) => {
     res.render('errorPage',{
@@ -24,7 +26,7 @@ app.get('*', (req, res) => {
     });
 });
 
-conectToDB()
+conectToDB();
 
 const port = 4000;
 app.listen(port, console.log(`Server is running on port: ${port}`));
