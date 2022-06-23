@@ -6,11 +6,15 @@
     <ul class="menu">
         <li><a href="/gallary">Gallery</a></li>
         <!-- Logged users -->
+        {{#if isLoggedIn}}
         <li><a href="/create">Create Publication</a></li>
         <li><a href="/profile">Profile</a></li>
         <li><a href="#">Logout</a></li>
+        {{/if}}
         <!-- Guest users -->
+        {{#else}}
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>
+        {{/else}}
     </ul>
 </nav>
