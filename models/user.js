@@ -12,7 +12,7 @@ const UserShcema = new mongoose.Schema({
         required: true
     },
 
-    adress: {
+    address: {
         type: String,
         required: true
     },
@@ -22,6 +22,6 @@ const UserShcema = new mongoose.Schema({
         ref: 'publications'
     }]
 
-})
+});
 
-module.exports = mongoose.model('User', UserShcema);
+export default mongoose.model('User', UserShcema);
