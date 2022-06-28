@@ -17,6 +17,8 @@ app.set('views', './views');
 
 app.use(Express.static('static'));
 
+app.use(Express.json());
+app.use(Express.urlencoded({ extended: true}));
 app.use(router);
 app.use(authRouter);
 
