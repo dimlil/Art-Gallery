@@ -4,6 +4,7 @@ import { router as authRouter } from "./router/auth.js";
 import handlebars from 'express-handlebars'
 import dotenv from 'dotenv'
 import { conectToDB } from "./connectToDB.js";
+import cookieParser from "cookie-parser";
 
 const app = Express();
 
@@ -19,6 +20,8 @@ app.use(Express.static('static'));
 
 app.use(Express.json());
 app.use(Express.urlencoded({ extended: true}));
+app.use(cookieParser());
+
 app.use(router);
 app.use(authRouter);
 
