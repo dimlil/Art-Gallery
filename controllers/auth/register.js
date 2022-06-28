@@ -1,6 +1,7 @@
 // import {User} from '../../models/user'
-import User from '../models/user.js'
+import User from '../../models/user.js'
 import bcrypt from 'bcrypt'
+import { generateToken } from './verifyUser.js';
 
 export const saveUser = async (req, res) => {
     const { username, password, address } = req.body;
@@ -16,6 +17,8 @@ export const saveUser = async (req, res) => {
 
     try {
         await user.save();
+        const token = await generateToken(username);
+        res.cookie('aid', token);
         return res.redirect('/');
     } catch (e) {
         console.log(e);

@@ -1,9 +1,11 @@
 import { Router } from "express";
+import { getUserStatus } from "../controllers/auth/verifyUser.js";
 const router = Router();
 
-router.get('/', (req, res) => {
+router.get('/',getUserStatus, (req, res) => {
     res.render('home',{
-        style: 'home.css'
+        style: 'home.css',
+        isLoggedIn: req.body.isLoggedIn
     })
 });
 router.get('/gallary', (req, res) => {
