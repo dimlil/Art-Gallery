@@ -16,5 +16,8 @@ router.get('/login', (req, res) => {
 router.post('/register', (req, res) => {
     saveUser(req, res);
 })
-
+router.get('/logout',(req,res)=>{
+    res.clearCookie('aid');
+    res.redirect('/')
+})
 export { router }
