@@ -17,7 +17,6 @@ export const getUserStatus = (req, res, next) => {
         } catch (e) {
             req.body.isLoggedIn = false;
         }
-        next();
     }
     next();
 }
